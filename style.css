@@ -1,0 +1,60 @@
+@font-face {
+  font-family: 'MatrixFont';
+  src: url('fonts/matrix.ttf') format('truetype');
+}
+
+body {
+  background-color: #f8f5e1; /* Цвет слоновой кости */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'MatrixFont', Arial, sans-serif;
+  text-align: center;
+  position: relative;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh; /* Центрируем текст */
+  width: 100%;
+  position: relative;
+}
+
+.message {
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.5s ease-in-out;
+  font-family: 'MatrixFont', Arial, sans-serif;
+  position: relative;
+  text-align: center; /* Центрирование текста */
+  white-space: pre-line; /* Позволяет правильно переносить длинные строки */
+  max-width: 60vw; /* Ограничение ширины текста */
+  padding: 0 2cm; /* Отступы слева и справа по 2 см */
+  word-wrap: break-word; /* Перенос длинных слов */
+}
+
+/* Эффект набора текста */
+.typing::after {
+  content: '|';
+  display: inline-block;
+  animation: blink 0.6s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.footer {
+  position: absolute;
+  bottom: 10px;
+  font-size: 12px;
+  color: #666;
+  font-family: 'MatrixFont', Arial, sans-serif;
+}
